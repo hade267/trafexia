@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
+  "appId": "com.trafexia.app",
+  "productName": "Trafexia",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "dist/**/*",
+    "dist-electron/**/*"
+  ],
+  "mac": {
+    "target": ["dmg", "zip"],
+    "icon": "resources/icons/icon.icns",
+    "category": "public.app-category.developer-tools"
+  },
+  "win": {
+    "target": ["nsis", "portable"],
+    "icon": "resources/icons/icon.ico"
+  },
+  "linux": {
+    "target": ["AppImage", "deb"],
+    "icon": "resources/icons",
+    "category": "Development"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  },
+  "extraResources": [
+    {
+      "from": "resources",
+      "to": "resources"
+    }
+  ]
+}
